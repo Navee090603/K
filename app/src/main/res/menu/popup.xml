@@ -2,6 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Change Number"
-        android:id="@+id/changeNum"/>
+        android:id="@+id/About_Me"
+        android:title="About Me" />
+
+    <item
+        android:id="@+id/changeNum"
+        android:title="Add Contact Number" />
+
+    <item
+        android:id="@+id/police_station_near_me"
+        android:title="Police Station Near Me" />
+
 </menu>

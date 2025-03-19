@@ -88,34 +88,34 @@ public class ServiceMine extends Service {
 
 
 
-            if (intent.getAction().equalsIgnoreCase("STOP")) {
-                if(isRunning) {
-                    this.stopForeground(true);
-                    this.stopSelf();
-                }
-            } else {
-
-
-                Intent notificationIntent = new Intent(this, MainActivity.class);
-                PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    NotificationChannel channel = new NotificationChannel("MYID", "CHANNELFOREGROUND", NotificationManager.IMPORTANCE_DEFAULT);
-
-                    NotificationManager m = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                    m.createNotificationChannel(channel);
-
-                    Notification notification = new Notification.Builder(this, "MYID")
-                            .setContentTitle("Women Safety")
-                            .setContentText("Shake Device to Send SOS")
-                            .setSmallIcon(R.drawable.girl_vector)
-                            .setContentIntent(pendingIntent)
-                            .build();
-                    this.startForeground(115, notification);
-                    isRunning = true;
-                    return START_NOT_STICKY;
-                }
+        if (intent.getAction().equalsIgnoreCase("STOP")) {
+            if(isRunning) {
+                this.stopForeground(true);
+                this.stopSelf();
             }
+        } else {
+
+
+            Intent notificationIntent = new Intent(this, MainActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel("MYID", "CHANNELFOREGROUND", NotificationManager.IMPORTANCE_DEFAULT);
+
+                NotificationManager m = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                m.createNotificationChannel(channel);
+
+                Notification notification = new Notification.Builder(this, "MYID")
+                        .setContentTitle("Women Safety")
+                        .setContentText("Shake Device to Send SOS")
+                        .setSmallIcon(R.drawable.girl_vector)
+                        .setContentIntent(pendingIntent)
+                        .build();
+                this.startForeground(115, notification);
+                isRunning = true;
+                return START_NOT_STICKY;
+            }
+        }
 
         return super.onStartCommand(intent,flags,startId);
 

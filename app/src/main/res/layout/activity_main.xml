@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
     <View
+        android:id="@+id/popup_menu_button"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentEnd="true"
-        android:onClick="PopupMenu"
-        android:clickable="true"
-        android:focusable="true"
         android:layout_margin="20dp"
-        android:background="@drawable/ic_baseline_more_vert_24"/>
-
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="189dp"
+        android:background="@drawable/ic_baseline_more_vert_24"
+        android:clickable="true"
+        android:contentDescription="@string/keep_calm_n"
+        android:focusable="true"
+        android:onClick="PopupMenu"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -25,49 +29,59 @@
         android:layout_centerInParent="true">
 
         <TextView
+            android:id="@+id/textNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:text="SOS Will Be Sent To\n"
             android:layout_centerHorizontal="true"
-            android:id="@+id/textNum"/>
+            android:text="@string/keep_calm_n"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="200dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/textNum"
-            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            app:cornerRadius="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="startServiceV"
-            app:layout_constraintStart_toStartOf="parent"
-            android:backgroundTint="#ffffff"
             android:layout_marginBottom="10dp"
-            android:id="@+id/start"
-            android:textColor="@color/black"
-            android:text="Start"/>
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/yellow"
+            app:strokeWidth="2dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:id="@+id/stop"
-            app:layout_constraintTop_toBottomOf="@id/start"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_below="@id/start"
-            app:cornerRadius="10dp"
-            android:backgroundTint="#ffffff"
-            android:onClick="stopService"
-            android:text="stop"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/start"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#fcd150"
+                    android:text="@string/start"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    app:cornerRadius="10dp" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/stop"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#fcd150"
+                    android:text="@string/stop"
+                    android:textColor="@color/black"
+                    app:cornerRadius="10dp"
+                    android:textStyle="bold"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </RelativeLayout>
-
-
-
 </RelativeLayout>
