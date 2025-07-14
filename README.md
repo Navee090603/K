@@ -30,5 +30,39 @@ Hit Run Button !
 
 ------------
 
+Module 37:  SQL Server Overview  
+
+ What is SQL Server 
+
+ Advantages of SQL Server 2012 
+
+ SQL Server architecture 
+
+ SQL Server security Model 
+
+ SQL Server System databases 
+
+ 
+
+Module 38:  SQL Server Tools  
+
+ Server Tools 
+
+• SQL Server manager 
+
+• SQL Server Agent 
+
+• Server Network Utility 
+
+ Client Tools 
+
+• SQL Enterprise Manager 
+
+• SQL Query Analyzer 
+
+• Client Network Utility
+
+
+
 
    
